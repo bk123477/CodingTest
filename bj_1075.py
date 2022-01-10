@@ -10,4 +10,4 @@ while True:
     new_num += 1
 
 result = new_num - hundred
-print("%02d" % result)
+print("%02d" % result) #print 0
