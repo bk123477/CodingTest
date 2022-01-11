@@ -1,5 +1,4 @@
 import sys
-from itertools import combinations
 def fibo(a, b): # a is start index, b is count
     result = 1
     for i in range(b):
