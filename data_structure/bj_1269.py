@@ -25,3 +25,11 @@ elif a[n-1] < b[m-1]:
     n_b += m - b_index
 
 print(n_a + n_b)
+
+''' # using python's set solution
+a, b = list(map(int, input().split()))
+A = set(map(int, input().split()))
+B = set(map(int, input().split()))
+
+print(len((A - B)) + len((B - A)))
+'''
