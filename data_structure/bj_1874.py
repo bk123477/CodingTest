@@ -17,7 +17,7 @@ for i in range(n):
     else:
         flag = -1
 if flag == -1:
-    print('No')
+    print('NO')
 else:
     for i in result:
         print(i)
