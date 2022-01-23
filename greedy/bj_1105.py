@@ -10,6 +10,6 @@ else:
         if l[i] == r[i]:
             if l[i] == '8':
                 cnt+=1
-        else:
+        else: # 같은 자릿수에서 8이 아닌게 존재하면 바로 반복문 빠져나옴
             break
     print(cnt)
