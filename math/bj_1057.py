@@ -1,25 +1,10 @@
 import sys
+from math import log2
 
 n, kim, lim = map(int, sys.stdin.readline().rstrip().split())
-max_n = max(kim, lim)
-min_n = min(kim, lim)
-cnt = 1
-while True:
-    if 2**cnt >= max_n:
+for round in range(1, int(log2(n)+2)):
+    if abs(kim-lim) == 1 and min(kim, lim) % 2 ==1:
+        print(round)
         break
-    else:
-        cnt += 1
-
-# cnt = 최대로 나올 수 있는 답. 이제 범위 줄여야함
-while True:
-    check = cnt - 1
-    for i in range(2): 
-        if (2**check)*i + 1 <= min_n < max_n <= (2**check)*(i+1):
-            cnt -= 1
-            break
-    if check == cnt:
-        continue
-    else:
-        cnt += 1
-        break
-print(cnt)
+    kim = (kim+1) // 2
+    lim = (lim+1) // 2
