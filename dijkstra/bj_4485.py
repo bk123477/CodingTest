@@ -14,19 +14,19 @@ while True:
     visited=[[False for _ in range(n)] for _ in range(n)]
 
     q = []
-    heapq.heappush(q, (graph[0][0], 0, 0)) # 루피, x좌표, y좌표
+    heapq.heappush(q, (graph[0][0], 0, 0)) # (루피, x좌표, y좌표)
     distance[0][0] = graph[0][0]
     visited[0][0] = True
     while q:
         loopy, yloc, xloc = heapq.heappop(q)
-        if distance[yloc][xloc] < loopy:
+        if distance[yloc][xloc] < loopy: # 이미 최단 거리 처리한 노드라면 건너 뜀
             continue
-        for i in range(4):
+        for i in range(4): # 상, 하, 좌, 우 탐색
             next_y = yloc + dy[i]
             next_x = xloc + dx[i]
-            if next_y < 0 or next_y >= n or next_x < 0 or next_x >= n:
+            if next_y < 0 or next_y >= n or next_x < 0 or next_x >= n: # 범위 벗어난 경우 continue
                 continue
-            if not visited[next_y][next_x]:
+            if not visited[next_y][next_x]: # 아직 방문하지 않은 노드라면 탐색
                 cost = distance[yloc][xloc] + graph[next_y][next_x]
                 if cost < distance[next_y][next_x]:
                     distance[next_y][next_x] = cost
