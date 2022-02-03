@@ -31,10 +31,10 @@ for _ in range(e):
 
 v1, v2 = map(int, input().rstrip().split())
 
-dijkstra(1, first_distance)
-dijkstra(v1, v1_v2_distance)
-dijkstra(v1, v1_distance)
-dijkstra(v2, v2_distance)
+dijkstra(1, first_distance) # 1부터 v1 or 1부터 v2까지 거리
+dijkstra(v1, v1_v2_distance) # v1~v2거리
+dijkstra(v1, v1_distance) # v1부터 n까지의 거리
+dijkstra(v2, v2_distance) # v2부터 n까지의 거리
 
 first_result = first_distance[v1] + v1_v2_distance[v2] + v2_distance[n]
 second_result = first_distance[v2] + v1_v2_distance[v2] + v1_distance[n]
