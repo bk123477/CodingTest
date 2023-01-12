@@ -1,4 +1,4 @@
-
+# 이 문제는 set, 계수 정렬 등으로도 풀 수 있음.
 
 import sys
 input = sys.stdin.readline
