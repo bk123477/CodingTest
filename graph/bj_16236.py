@@ -41,7 +41,7 @@ def bfs(bx,by):
                     if 0 < graph[nx][ny] < baby: # 먹을 수 있는 경우
                         minDist = dist
                         distList.append((dist + 1, nx, ny))
-                    if dist + 1 <= minDist: # 먹지 못 하는 경우
+                    if dist + 1 <= minDist: # 아직 최소 거리가 아닐 경우
                         q.append((nx, ny, dist + 1))
     if distList:
         distList.sort()
