@@ -13,7 +13,7 @@ arrive = False
 for _ in range(M):
     a, b = map(int, input().split())
     friends[a].append(b)
-    friends[b].apend(a)
+    friends[b].append(a)
 
 def DFS(start, depth):
     global arrive
