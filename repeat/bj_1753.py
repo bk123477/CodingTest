@@ -28,4 +28,8 @@ while q:
             distance[next[0]] = cost
             heapq.heappush(q, (cost, next[0]))
 
-print(distance)
+for i in range(1, V+1):
+    if distance[i] == INF:
+        print("INF")
+    else:
+        print(distance[i])
